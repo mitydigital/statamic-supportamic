@@ -39,13 +39,13 @@
             <p>{{ __('supportamic::supportamic.widget.support.intro_3') }}</p>
         </div>
 
-        <div class="flex justify-center text-sm mb-4">
+        <div class="flex flex-wrap justify-center text-sm mb-4">
 
             @if ($actionChat)
             <div class="action">
                 <button class="supportamic-chat-trigger
                                disabled
-                               h-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
+                               h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
                         disabled
                         title="{{ __('supportamic::supportamic.widget.support.action_chat') }}">
                     <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800">
@@ -59,7 +59,7 @@
             @if ($actionEmail)
             <div class="action">
                 <a href="mailto:{{ $actionEmail }}"
-                   class="h-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
+                   class="h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
                    title="{{ __('supportamic::supportamic.widget.support.action_email') }}">
                     <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800">
                         @supportamic_svg('email')
@@ -72,7 +72,7 @@
             @if ($actionWebsite)
             <div class="action">
                 <a href="{{ $actionWebsite }}"
-                   class="h-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
+                   class="h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
                    target="_blank"
                    title="{{ __('supportamic::supportamic.widget.support.action_website') }}">
                     <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800">
