@@ -39,6 +39,7 @@ class Supportamic
                 if (!config($key)) {
                     return false; // missing endpoint
                 }
+                break;
             default:
                 return false; // unknown engine
         }
