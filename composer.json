@@ -1,0 +1,35 @@
+{
+    "name": "mitydigital/supportamic",
+    "description": "Adds Mity Digital's support features to Statamic.",
+    "type": "statamic-addon",
+    "keywords": [
+        "statamic",
+        "support"
+    ],
+    "autoload": {
+        "psr-4": {
+            "MityDigital\\Supportamic\\": "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marty Friedel"
+        }
+    ],
+    "require": {
+	    "php": "^8.1",
+        "statamic/cms": "^4.0"
+    },
+    "extra": {
+        "statamic": {
+            "name": "Supportamic",
+            "description": "Adds Mity Digital's support features to Statamic."
+        },
+        "laravel": {
+            "providers": [
+                "MityDigital\\Supportamic\\ServiceProvider"
+            ]
+        }
+    }
+}
