@@ -2,6 +2,7 @@
 
 namespace MityDigital\Supportamic;
 
+use Illuminate\Support\Facades\Auth;
 use MityDigital\Supportamic\Widgets\Supportamic;
 use Statamic\Providers\AddonServiceProvider;
 use Statamic\Statamic;
@@ -38,6 +39,12 @@ class ServiceProvider extends AddonServiceProvider
         //
         if (Statamic::isCpRoute()) {
 
+            // if not logged in to the CP guard, don't show anything
+            if (!Auth::guard(config('statamic.users.guards.cp', null))->id()) {
+                return $this; // just return
+            }
+
+            // do we have chat?
             if (!\MityDigital\Supportamic\Support\Supportamic::hasChat())
             {
                 return $this; // just return
