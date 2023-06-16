@@ -16,3 +16,10 @@
     opacity:25%;
     pointer-events: none;
 }
+
+#hubspot-messages-iframe-container {
+    z-index: 50;
+}
+.portal-targets {
+    z-index: 51;
+}
