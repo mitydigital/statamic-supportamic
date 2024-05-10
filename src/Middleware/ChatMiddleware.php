@@ -11,7 +11,7 @@ class ChatMiddleware
     {
         // do we have chat?
         if (!\MityDigital\Supportamic\Support\Supportamic::hasChat()) {
-            return $this; // just return
+            return $next($request); // continue
         }
 
         // what sort of chat are we meant to use?
