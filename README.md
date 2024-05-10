@@ -3,13 +3,14 @@
 <!-- statamic:hide -->
 
 ![Statamic 4.0+](https://img.shields.io/badge/Statamic-4.0+-FF269E?style=for-the-badge&link=https://statamic.com)
+![Statamic 5.0+](https://img.shields.io/badge/Statamic-5.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 [![Supportamic on Packagist](https://img.shields.io/packagist/v/mitydigital/supportamic?style=for-the-badge)](https://packagist.org/packages/mitydigital/supportamic/stats)
 
 ---
 
 <!-- /statamic:hide -->
 
-> Supportamic is an very opinionated support add-on for Statamic 4 including HubSpot chat support and a Dashboard Widget.
+> Supportamic is an very opinionated support add-on for Statamic 4 and 5 including HubSpot chat support and a Dashboard Widget.
 
 ## Configuration
 
