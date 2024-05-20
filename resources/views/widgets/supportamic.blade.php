@@ -1,8 +1,8 @@
 <div id="supportamic-widget" class="card p-0 overflow-hidden h-full">
-    <div class="border-b">
+    <div class="border-b dark:border-dark-900">
         <div class="flex justify-between items-center p-4">
             <h2 class="flex">
-                <div class="h-6 w-6 mr-2 text-gray-800">
+                <div class="h-6 w-6 mr-2 text-gray-800 dark:text-dark-175">
                     @supportamic_svg('supportamic')
                 </div>
                 <div class="-mt-px">
@@ -16,7 +16,7 @@
     </div>
 
     @if ($showGuide)
-    <div class="border-b p-4">
+    <div class="border-b dark:border-dark-900 p-4">
         <div class="content">
             <h3>{{ __('supportamic::supportamic.widget.guide.title') }}</h3>
             <p>{{ __('supportamic::supportamic.widget.guide.intro') }}</p>
@@ -45,13 +45,13 @@
             <div class="action">
                 <button class="supportamic-chat-trigger
                                disabled
-                               h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
+                               h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200 dark:hover:bg-dark-575"
                         disabled
                         title="{{ __('supportamic::supportamic.widget.support.action_chat') }}">
-                    <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800">
+                    <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800 dark:text-dark-175">
                         @supportamic_svg('conversation')
                     </span>
-                    <div class="label text-blue font-semibold">{{ __('supportamic::supportamic.widget.support.action_chat') }}</div>
+                    <div class="label text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.action_chat') }}</div>
                 </button>
             </div>
             @endif
@@ -59,12 +59,12 @@
             @if ($actionEmail)
             <div class="action">
                 <a href="mailto:{{ $actionEmail }}"
-                   class="h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
+                   class="h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200 dark:hover:bg-dark-575"
                    title="{{ __('supportamic::supportamic.widget.support.action_email') }}">
-                    <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800">
+                    <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800 dark:text-dark-175">
                         @supportamic_svg('email')
                     </span>
-                    <div class="text-blue font-semibold">{{ __('supportamic::supportamic.widget.support.action_email') }}</div>
+                    <div class="text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.action_email') }}</div>
                 </a>
             </div>
             @endif
@@ -72,13 +72,13 @@
             @if ($actionWebsite)
             <div class="action">
                 <a href="{{ $actionWebsite }}"
-                   class="h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200"
+                   class="h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200 dark:hover:bg-dark-575"
                    target="_blank"
                    title="{{ __('supportamic::supportamic.widget.support.action_website') }}">
-                    <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800">
+                    <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800 dark:text-dark-175">
                         @supportamic_svg('website')
                     </span>
-                    <div class="text-blue font-semibold">{{ __('supportamic::supportamic.widget.support.action_website') }}</div>
+                    <div class="text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.action_website') }}</div>
                 </a>
             </div>
             @endif
