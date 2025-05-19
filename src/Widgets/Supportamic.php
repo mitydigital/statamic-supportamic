@@ -15,9 +15,7 @@ class Supportamic extends Widget
     public function html()
     {
         // set up the Supportamic directive. We only need it here
-        Blade::directive('supportamic_svg', function ($expression) {
-            return "<?php echo \MityDigital\Supportamic\Support\Supportamic::svg({$expression}) ?>";
-        });
+
 
         // should we show the guide
         $showGuide = config('supportamic.widget.show_guide', false);
