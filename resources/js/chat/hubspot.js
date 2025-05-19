@@ -1,18 +1,8 @@
+import {onWidgetReady} from "../composables/useOnWidgetReady";
+
 function openChat(event) {
     event.preventDefault();
     window.HubSpotConversations?.widget.open();
-}
-
-function onConversationsAPIReady() {
-    // do we have any chat triggers
-    let triggers = document.getElementsByClassName('supportamic-chat-trigger');
-    for (let i = 0; i < triggers.length; i++) {
-        triggers[i].addEventListener("click", openChat);
-
-        // remove disabled state
-        triggers[i].classList.remove('disabled');
-        triggers[i].removeAttribute('disabled');
-    }
 }
 
 export default function () {
@@ -42,7 +32,7 @@ export default function () {
     document.head.appendChild(script);
 
     if (!window.HubSpotConversations) {
-        window.hsConversationsOnReady = [onConversationsAPIReady];
+        window.hsConversationsOnReady = [() => onWidgetReady(openChat)];
     }
 
 }

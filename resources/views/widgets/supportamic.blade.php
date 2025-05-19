@@ -47,11 +47,17 @@
                                disabled
                                h-full w-full flex flex-col text-center block p-4 rounded-md group hover:bg-gray-200 dark:hover:bg-dark-575"
                         disabled
-                        title="{{ __('supportamic::supportamic.widget.support.action_chat') }}">
+                        title="{{ __('supportamic::supportamic.widget.support.' . $actionChat) }}">
                     <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800 dark:text-dark-175">
-                        @supportamic_svg('conversation')
+                        @switch($actionChat)
+                            @case('action_ticket')
+                                @supportamic_svg('lifebuoy')
+                                @break
+                            @default
+                                @supportamic_svg('conversation')
+                        @endswitch
                     </span>
-                    <div class="label text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.action_chat') }}</div>
+                    <div class="label text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.' . $actionChat) }}</div>
                 </button>
             </div>
             @endif

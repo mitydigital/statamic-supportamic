@@ -19,6 +19,29 @@ class ChatMiddleware
 
         // configure chat based on the engine
         switch ($engine) {
+            case 'freshdesk':
+                /*
+                 * Freshdesk requires a chat endpoint, so let's make sure we have that.
+                 */
+                $key = 'supportamic.chat.endpoint';
+                if (!config($key)) {
+                    throw new \Exception('Missing config value for '.$key.'. Freshdesk requires this.');
+                }
+
+                // pass the config options to
+                Statamic::provideToScript([
+                    'supportamic' => [
+                        'chat' => [
+                            'type' => $engine,
+                            'endpoint' => config($key),
+                            'identity' => [
+                                'email' => $request->user()->{config('supportamic.chat.identity.email', 'email')},
+                                'name' => $request->user()->{config('supportamic.chat.identity.name', 'name')}
+                            ]
+                        ],
+                    ]
+                ]);
+                break;
             case 'hubspot':
                 /*
                  * Hubspot requires a chat endpoint, so let's make sure we have that.
@@ -35,8 +58,8 @@ class ChatMiddleware
                             'type' => $engine,
                             'endpoint' => config($key),
                             'identity' => [
-                                'email' => config('supportamic.chat.identity.email', null),
-                                'name' => config('supportamic.chat.identity.name', null)
+                                'email' => $request->user()->{config('supportamic.chat.identity.email', 'email')},
+                                'name' => $request->user()->{config('supportamic.chat.identity.name', 'name')}
                             ]
                         ],
                     ]

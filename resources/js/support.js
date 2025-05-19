@@ -1,7 +1,11 @@
+import initFreshdeskChat from './chat/freshdesk.js';
 import initHubspotChat from './chat/hubspot.js';
 
 let chatType = window?.StatamicConfig?.supportamic?.chat.type;
 
+if (chatType === 'freshdesk') {
+    initFreshdeskChat()
+}
 if (chatType === 'hubspot') {
     initHubspotChat()
 }

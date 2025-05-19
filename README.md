@@ -4,13 +4,14 @@
 
 ![Statamic 4.0+](https://img.shields.io/badge/Statamic-4.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 ![Statamic 5.0+](https://img.shields.io/badge/Statamic-5.0+-FF269E?style=for-the-badge&link=https://statamic.com)
+![Statamic 6.0+](https://img.shields.io/badge/Statamic-6.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 [![Supportamic on Packagist](https://img.shields.io/packagist/v/mitydigital/supportamic?style=for-the-badge)](https://packagist.org/packages/mitydigital/supportamic/stats)
 
 ---
 
 <!-- /statamic:hide -->
 
-> Supportamic is an very opinionated support add-on for Statamic 4 and 5 including HubSpot chat support and a Dashboard Widget.
+> Supportamic is a very opinionated support add-on for Statamic including HubSpot chat or Freshdesk widget support and a Dashboard Widget.
 
 ## Configuration
 
@@ -37,13 +38,13 @@ php artisan vendor:publish --tag=supportamic-config
 
 For most sites, this won't be necessary.
 
-## Chat
+## Chat / Widget
 
-Supportamic is configured to work with one chat engine, HubSpot's chat (conversations) widget.
+Supportamic is configured to work with Hubspot's chat or Freskdesk's Widget.
 
-`SUPPORTAMIC_CHAT` should be "hubspot" - anything else will throw a wobbly.
+`SUPPORTAMIC_CHAT` should be "hubspot" or "freshdesk" - anything else will throw a wobbly.
 
-`SUPPORTAMIC_CHAT_ENDPOINT` is the endpoint URL provided by HubSpot for embedding your chat widget to your page.
+`SUPPORTAMIC_CHAT_ENDPOINT` is the endpoint URL provided by HubSpot or Freshdesk for embedding your chat widget to your page.
 
 ### Chat Identification
 
@@ -81,11 +82,11 @@ Setting `SUPPORTAMIC_WIDGET_SHOW_GUIDE` to `false` will always hide the Admin Gu
 Keeping `SUPPORTAMIC_WIDGET_SHOW_GUIDE` as `true` will show the Admin Guide section when the Support URL is not 
 Statamic's URL.
 
-### Support: Start a conversation
+### Support: Start a conversation / Create a ticket
 
-If you have Chat correctly configured, the "Start a Conversation" button will appear.
+If you have Chat correctly configured, the "Start a Conversation" or "Create a Ticket" button will appear.
 
-When loaded, this will be disabled, but will be enabled when the Chat widget is ready.
+When loaded, this will be disabled, but will be enabled when the Chat/Ticket widget is ready.
 
 ### Support: Email support
 

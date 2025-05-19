@@ -4,15 +4,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Chat Settings
+    | Chat/Ticket widget Settings
     |--------------------------------------------------------------------------
     |
-    | Chitty chitty chat chat. Let's all chat.
+    | Chitty chitty chat chat. Let's all chat. Or create a ticket.
     |
-    | Available types: hubspot
-    | Set to "null" to just ingore all other chat-type setup and config.
+    | Available types: hubspot, freshdesk
+    | Set to "null" to just ignore all other chat-type setup and config.
     |
-    | Endpoint is required for "hubspot"
+    | Endpoint is required for "hubspot" and "freshdesk"
     |
     | Identity allows you to map User blueprint field handles (the values) to key email and name
     | properties to pre-set identity within the chat widget. If the type supports it.

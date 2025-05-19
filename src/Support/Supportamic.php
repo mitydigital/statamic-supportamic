@@ -21,9 +21,9 @@ class Supportamic
         return str_replace('<svg', sprintf('<svg%s', $attrs), $svg);
     }
 
-    public static function hasChat(): bool
+    public static function hasChat(): bool|string
     {
-        $availableChatEngines = ['hubspot'];
+        $availableChatEngines = ['hubspot', 'freshdesk'];
 
         $engine = config('supportamic.chat.type', null);
 
@@ -34,12 +34,18 @@ class Supportamic
 
         // do we have what the engine needs?
         switch ($engine) {
+            case 'freshdesk':
+                $key = 'supportamic.chat.endpoint';
+                if (!config($key)) {
+                    return false; // missing endpoint
+                }
+                return 'action_ticket';
             case 'hubspot':
                 $key = 'supportamic.chat.endpoint';
                 if (!config($key)) {
                     return false; // missing endpoint
                 }
-                break;
+                return 'action_chat';
             default:
                 return false; // unknown engine
         }

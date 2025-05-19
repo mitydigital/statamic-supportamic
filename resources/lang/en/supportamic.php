@@ -18,6 +18,7 @@ return [
             'intro_3' => 'What would you like to do?',
 
             'action_chat' => 'Start a conversation',
+            'action_ticket' => 'Create a ticket',
             'action_email' => 'Email support',
             'action_website' => 'Visit support website',
         ]
