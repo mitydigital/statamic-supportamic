@@ -57,7 +57,7 @@
                                 @supportamic_svg('conversation')
                         @endswitch
                     </span>
-                    <div class="label text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.' . $actionChat) }}</div>
+                    <div class="w-full text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.' . $actionChat) }}</div>
                 </button>
             </div>
             @endif
@@ -70,7 +70,7 @@
                     <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800 dark:text-dark-175">
                         @supportamic_svg('email')
                     </span>
-                    <div class="text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.action_email') }}</div>
+                    <div class="w-full text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.action_email') }}</div>
                 </a>
             </div>
             @endif
@@ -84,7 +84,7 @@
                     <span class="mb-2 inline-block h-8 w-8 mx-auto text-gray-800 dark:text-dark-175">
                         @supportamic_svg('website')
                     </span>
-                    <div class="text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.action_website') }}</div>
+                    <div class="w-full text-blue dark:text-blue-600 font-semibold">{{ __('supportamic::supportamic.widget.support.action_website') }}</div>
                 </a>
             </div>
             @endif
