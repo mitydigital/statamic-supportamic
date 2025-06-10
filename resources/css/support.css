@@ -20,6 +20,12 @@
 #hubspot-messages-iframe-container {
     z-index: 50;
 }
+
+#freshworks-container {
+    z-index:50 !important;
+    position: relative;
+}
+
 .portal-targets {
     z-index: 51;
 }
