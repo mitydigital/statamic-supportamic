@@ -38,9 +38,9 @@ class Supportamic extends Widget
             return;
         }
 
-        $view = 'supportamic::widgets.supportamic-6';
-        if(\Illuminate\Support\Str::startsWith(\Statamic\Statamic::version(), '5.')) {
-            $view = 'supportamic::widgets.supportamic-5';
+        $view = 'supportamic::widgets.supportamic-5'; // captures 4 and 5
+        if(\Illuminate\Support\Str::startsWith(\Statamic\Statamic::version(), '6.')) {
+            $view = 'supportamic::widgets.supportamic-6';
         }
 
         return view($view, [
