@@ -16,7 +16,6 @@ class Supportamic extends Widget
     {
         // set up the Supportamic directive. We only need it here
 
-
         // should we show the guide
         $showGuide = config('supportamic.widget.show_guide', false);
         $actionGuide = config('statamic.cp.support_url', false);
@@ -39,7 +38,12 @@ class Supportamic extends Widget
             return;
         }
 
-        return view('supportamic::widgets.supportamic', [
+        $view = 'supportamic::widgets.supportamic-6';
+        if(\Illuminate\Support\Str::startsWith(\Statamic\Statamic::version(), '5.')) {
+            $view = 'supportamic::widgets.supportamic-5';
+        }
+
+        return view($view, [
             'showGuide' => $showGuide,
 
             'actionChat' => $actionChat,

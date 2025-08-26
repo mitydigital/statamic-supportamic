@@ -1,12 +1,13 @@
 {
   "resources/css/support.css": {
-    "file": "assets/support-32be4628.css",
-    "isEntry": true,
-    "src": "resources/css/support.css"
+    "file": "assets/support-DlsZcABM.css",
+    "src": "resources/css/support.css",
+    "isEntry": true
   },
   "resources/js/support.js": {
-    "file": "assets/support-a8cab7be.js",
-    "isEntry": true,
-    "src": "resources/js/support.js"
+    "file": "assets/support-CtnwqdBy.js",
+    "name": "support",
+    "src": "resources/js/support.js",
+    "isEntry": true
   }
 }
