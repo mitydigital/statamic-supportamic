@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    @if ($showGuide || true)
+    @if ($showGuide)
     <div class="border-b border-gray-200 dark:border-gray-700 px-4.5 py-4">
         <div class="prose prose-sm max-w-full dark:prose-invert">
             <h3>{{ __('supportamic::supportamic.widget.guide.title') }}</h3>
@@ -39,7 +39,7 @@
 
         <div class="flex flex-wrap gap-x-4 justify-center text-sm pt-4">
 
-            @if ($actionChat || true)
+            @if ($actionChat)
             <div class="action">
                 <ui-button
                         class="supportamic-chat-trigger disabled flex w-full h-auto py-3"
