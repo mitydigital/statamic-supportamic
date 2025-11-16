@@ -22,10 +22,6 @@
 }
 
 #freshworks-container {
-    z-index:50 !important;
+    z-index:2 !important;
     position: relative;
-}
-
-.portal-targets {
-    z-index: 51;
 }
