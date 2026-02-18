@@ -22,6 +22,6 @@
 }
 
 #freshworks-container {
-    z-index:2 !important;
+    z-index:1 !important;
     position: relative;
 }
