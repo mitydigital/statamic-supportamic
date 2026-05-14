@@ -1,11 +1,15 @@
 {
   "resources/css/support.css": {
-    "file": "assets/support-DBuWNQlM.css",
+    "file": "assets/support-cWWK4GDm.css",
+    "name": "support",
+    "names": [
+      "support.css"
+    ],
     "src": "resources/css/support.css",
     "isEntry": true
   },
   "resources/js/support.js": {
-    "file": "assets/support-CtnwqdBy.js",
+    "file": "assets/support-Bujk6_2y.js",
     "name": "support",
     "src": "resources/js/support.js",
     "isEntry": true

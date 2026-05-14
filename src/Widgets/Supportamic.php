@@ -3,20 +3,13 @@
 namespace MityDigital\Supportamic\Widgets;
 
 use Illuminate\Support\Facades\Blade;
+use Statamic\Widgets\VueComponent;
 use Statamic\Widgets\Widget;
 
 class Supportamic extends Widget
 {
-    /**
-     * The HTML that should be shown in the widget.
-     *
-     * @return string|\Illuminate\View\View
-     */
-    public function html()
+    public function component()
     {
-        // set up the Supportamic directive. We only need it here
-
-        // should we show the guide
         $showGuide = config('supportamic.widget.show_guide', false);
         $actionGuide = config('statamic.cp.support_url', false);
         if (!$actionGuide || str_starts_with($actionGuide, 'https://statamic.com'))
@@ -38,18 +31,13 @@ class Supportamic extends Widget
             return;
         }
 
-        $view = 'supportamic::widgets.supportamic-5'; // captures 4 and 5
-        if(\Illuminate\Support\Str::startsWith(\Statamic\Statamic::version(), '6.')) {
-            $view = 'supportamic::widgets.supportamic-6';
-        }
+        return VueComponent::render('Supportamic', [
+            'show_guide' => $showGuide,
 
-        return view($view, [
-            'showGuide' => $showGuide,
-
-            'actionChat' => $actionChat,
-            'actionGuide' => $actionGuide,
-            'actionEmail' => $actionEmail,
-            'actionWebsite' => $actionWebsite
+            'action_chat' => $actionChat,
+            'action_email' => $actionEmail,
+            'action_guide' => $actionGuide,
+            'action_website' => $actionWebsite,
         ]);
     }
 }

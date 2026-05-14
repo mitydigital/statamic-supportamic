@@ -1,16 +1,19 @@
+@import "@statamic/cms/tailwind.css";
+@source '../**/*.vue';
+
 #hubspot-conversations-iframe {
     outline:none;
 }
 
-#supportamic-widget .action {
+/*#supportamic-widget .action {
     width:20%;
-}
+}*/
 
-@media (max-width: 576px) {
+/*@media (max-width: 576px) {
     #supportamic-widget .action {
         width: 50%;
     }
-}
+}*/
 
 .supportamic-chat-trigger.disabled {
     opacity:25%;
