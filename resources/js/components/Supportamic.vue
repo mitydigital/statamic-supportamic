@@ -34,40 +34,42 @@ async function copyToClipboard(property) {
             :title="__('supportamic::supportamic.widget.title')">
 
         <template #actions>
-            <template v-if="server_ip">
-                <button class="relative"
-                        :class="{
-                            'cursor-pointer' : isHttps,
-                            'pointer-events-none' : !isHttps,
-                        }"
-                        @click.prevent="copyToClipboard('server_ip')">
-                    <Badge :class="{ '!text-transparent' : copied === 'server_ip' }"
-                           color="lime">{{ server_ip }}</Badge>
-                    <Text class="absolute inset-0 flex items-center justify-center transition-opacity opacity-0"
-                          :class="{ 'opacity-100' : copied === 'server_ip' }"
-                          size="sm"
-                          variant="subtle">
-                        Copied!
-                    </Text>
-                </button>
-            </template>
-            <template v-if="server_hostname">
-                <button class="relative"
-                        :class="{
-                            'cursor-pointer' : isHttps,
-                            'pointer-events-none' : !isHttps,
-                        }"
-                        @click.prevent="copyToClipboard('server_hostname')">
-                    <Badge :class="{ '!text-transparent' : copied === 'server_hostname' }"
-                           color="sky">{{ server_hostname }}</Badge>
-                    <Text class="absolute inset-0 flex items-center justify-center transition-opacity opacity-0"
-                          :class="{ 'opacity-100' : copied === 'server_hostname' }"
-                          size="sm"
-                          variant="subtle">
-                        Copied!
-                    </Text>
-                </button>
-            </template>
+            <div class="flex items-center flex-wrap justify-end gap-x-4 gap-y-1">
+                <template v-if="server_ip">
+                    <button class="relative"
+                            :class="{
+                                'cursor-pointer' : isHttps,
+                                'pointer-events-none' : !isHttps,
+                            }"
+                            @click.prevent="copyToClipboard('server_ip')">
+                        <Badge :class="{ '!text-transparent' : copied === 'server_ip' }"
+                               color="lime">{{ server_ip }}</Badge>
+                        <Text class="absolute inset-0 flex items-center justify-center transition-opacity opacity-0"
+                              :class="{ 'opacity-100' : copied === 'server_ip' }"
+                              size="sm"
+                              variant="subtle">
+                            Copied!
+                        </Text>
+                    </button>
+                </template>
+                <template v-if="server_hostname">
+                    <button class="relative"
+                            :class="{
+                                'cursor-pointer' : isHttps,
+                                'pointer-events-none' : !isHttps,
+                            }"
+                            @click.prevent="copyToClipboard('server_hostname')">
+                        <Badge :class="{ '!text-transparent' : copied === 'server_hostname' }"
+                               color="sky">{{ server_hostname }}</Badge>
+                        <Text class="absolute inset-0 flex items-center justify-center transition-opacity opacity-0"
+                              :class="{ 'opacity-100' : copied === 'server_hostname' }"
+                              size="sm"
+                              variant="subtle">
+                            Copied!
+                        </Text>
+                    </button>
+                </template>
+            </div>
         </template>
 
         <div v-if="show_guide"
