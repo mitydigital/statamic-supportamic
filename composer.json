@@ -1,6 +1,6 @@
 {
     "name": "mitydigital/supportamic",
-    "description": "Adds Mity Digital's support features to Statamic.",
+    "description": "Adds Mity Digital's support features to Statamic 6.",
     "type": "statamic-addon",
     "keywords": [
         "statamic",
@@ -18,17 +18,23 @@
         }
     ],
     "require": {
-	    "php": "^8.2"
+	    "php": "^8.3",
+        "statamic/cms": "^6.0"
     },
     "extra": {
         "statamic": {
             "name": "Supportamic",
-            "description": "Adds Mity Digital's support features to Statamic."
+            "description": "Adds Mity Digital's support features to Statamic 6."
         },
         "laravel": {
             "providers": [
                 "MityDigital\\Supportamic\\ServiceProvider"
             ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
         }
     }
 }

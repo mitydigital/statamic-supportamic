@@ -5,6 +5,7 @@ namespace MityDigital\Supportamic;
 use Illuminate\Support\Facades\Auth;
 use MityDigital\Supportamic\Middleware\ChatMiddleware;
 use MityDigital\Supportamic\Widgets\Supportamic;
+use Statamic\Facades\Icon;
 use Statamic\Facades\User;
 use Statamic\Providers\AddonServiceProvider;
 use Statamic\Statamic;
@@ -32,13 +33,6 @@ class ServiceProvider extends AddonServiceProvider
 
     public function bootAddon()
     {
-        // publishable views
-        $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/supportamic'),
-        ], 'supportamic-views');
-
-        Blade::directive('supportamic_svg', function ($expression) {
-            return "<?php echo \MityDigital\Supportamic\Support\Supportamic::svg({$expression}) ?>";
-        });
+        Icon::register('supportamic', __DIR__.'/../resources/icons');
     }
 }

@@ -3,7 +3,6 @@
 return [
     'widget' => [
         'title' => 'Help and Support',
-        'intro' => 'Your time with us doesn\'t end when your site is live. We are here to help you.',
 
         'guide' => [
             'title' => 'Admin guide',

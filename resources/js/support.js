@@ -1,6 +1,8 @@
 import initFreshdeskChat from './chat/freshdesk.js';
 import initHubspotChat from './chat/hubspot.js';
 
+import Supportamic from './components/Supportamic.vue';
+
 let chatType = window?.StatamicConfig?.supportamic?.chat.type;
 
 if (chatType === 'freshdesk') {
@@ -13,3 +15,7 @@ if (chatType === 'hubspot') {
 //
 // Could be extended with a different chat setup. But we're with Hubspot for now.
 //
+
+Statamic.booting(() => {
+    Statamic.$components.register('Supportamic', Supportamic);
+});
