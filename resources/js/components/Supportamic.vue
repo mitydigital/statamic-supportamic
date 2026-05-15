@@ -1,20 +1,74 @@
 <script setup>
-import { Widget, Icon, Button } from '@statamic/cms/ui';
+import { Badge, Widget, Icon, Button, Text } from '@statamic/cms/ui';
+import { ref } from 'vue';
 
-defineProps([
+const props = defineProps([
     'show_guide',
 
     'action_chat',
     'action_email',
     'action_guide',
     'action_website',
+
+    'server_ip',
+    'server_hostname'
 ]);
+
+const copied = ref(null);
+const isHttps = window.location.protocol === 'https:';
+
+async function copyToClipboard(property) {
+    try {
+        await navigator.clipboard.writeText(props[property]);
+        copied.value = property;
+        setTimeout(() => copied.value = null, 2500);
+    } catch (error) {
+        console.error('Failed to copy:', error);
+    }
+}
 </script>
 
 <template>
 
     <Widget icon="supportamic::supportamic"
             :title="__('supportamic::supportamic.widget.title')">
+
+        <template #actions>
+            <template v-if="server_ip">
+                <button class="relative"
+                        :class="{
+                            'cursor-pointer' : isHttps,
+                            'pointer-events-none' : !isHttps,
+                        }"
+                        @click.prevent="copyToClipboard('server_ip')">
+                    <Badge :class="{ '!text-transparent' : copied === 'server_ip' }"
+                           color="lime">{{ server_ip }}</Badge>
+                    <Text class="absolute inset-0 flex items-center justify-center transition-opacity opacity-0"
+                          :class="{ 'opacity-100' : copied === 'server_ip' }"
+                          size="sm"
+                          variant="subtle">
+                        Copied!
+                    </Text>
+                </button>
+            </template>
+            <template v-if="server_hostname">
+                <button class="relative"
+                        :class="{
+                            'cursor-pointer' : isHttps,
+                            'pointer-events-none' : !isHttps,
+                        }"
+                        @click.prevent="copyToClipboard('server_hostname')">
+                    <Badge :class="{ '!text-transparent' : copied === 'server_hostname' }"
+                           color="sky">{{ server_hostname }}</Badge>
+                    <Text class="absolute inset-0 flex items-center justify-center transition-opacity opacity-0"
+                          :class="{ 'opacity-100' : copied === 'server_hostname' }"
+                          size="sm"
+                          variant="subtle">
+                        Copied!
+                    </Text>
+                </button>
+            </template>
+        </template>
 
         <div v-if="show_guide"
              class="border-b border-gray-200 dark:border-gray-700 px-4.5 py-4">
