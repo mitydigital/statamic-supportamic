@@ -117,7 +117,7 @@ async function copyToClipboard(property) {
                 <div v-if="action_email"
                      class="w-full sm:!w-1/2 lg:!w-1/3 xl:!w-1/5">
                     <Button
-                        :href="action_email"
+                        :href="'mailto:'+action_email"
                         class="flex w-full h-auto p-3"
                         target="_blank"
                     >
